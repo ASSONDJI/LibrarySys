@@ -1,35 +1,41 @@
 package INAF.LybraSys.Emprunt.domain;
 
 
-import INAF.LybraSys.Exemplaire.domain.Exemplaire;
+import INAF.LybraSys.Exemplaire.domain.ExemplaireModel;
 import INAF.LybraSys.User.Domain.UsersModel;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 @Entity
 @Table(name = "emprunt")
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
+@Data
 public class EmpruntModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idEmprunt;
-    private LocalDate datePublication;
-    private LocalDate dateRetourEffectif;
-    private Double penaliteEventuelle;
+    private int idEmprunt;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_id", nullable = false)
     private UsersModel user;
 
     @ManyToOne
-    @JoinColumn(name = "exemplaire_id")
-    private Exemplaire exemplaire;
+    @JoinColumn(name = "exemplaire_id", nullable = false)
+    private ExemplaireModel exemplaire;
+
+    @Temporal(TemporalType.DATE)
+    private Date dateEmprunt;
+
+    @Temporal(TemporalType.DATE)
+    private Date dateRetourPrevu;
+
+    @Temporal(TemporalType.DATE)
+    private Date dateRetourEffectif;
+
+    private String statut;
+
+
 }

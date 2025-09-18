@@ -1,9 +1,14 @@
 package INAF.LybraSys.Emprunt.api.Dto;
 
+import java.util.Date;
 import java.util.List;
 
 public record EmpruntRequestDto(
-        String name,
-        List<Integer> Empruntid
+        int userId,
+        int exemplaireId,
+        Date dateEmprunt,
+        Date dateRetourPrevu,
+        Date dateRetourEffectif,
+        String statut
 ) {
 }

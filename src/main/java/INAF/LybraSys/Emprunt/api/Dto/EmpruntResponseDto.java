@@ -1,12 +1,15 @@
 package INAF.LybraSys.Emprunt.api.Dto;
 
-import INAF.LybraSys.Emprunt.domain.EmpruntModel;
 
-import java.util.List;
+import java.util.Date;
 
 public record EmpruntResponseDto(
-        Integer idEmprunt,
-        String name,
-        List<EmpruntModel> EmpruntList
+        int idEmprunt,
+        String userName,
+        String exemplaireCode,
+        Date dateEmprunt,
+        Date dateRetourPrevu,
+        Date dateRetourEffectif,
+        String statut
 ) {
 }
