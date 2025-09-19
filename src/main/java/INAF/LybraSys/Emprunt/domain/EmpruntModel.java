@@ -2,6 +2,7 @@ package INAF.LybraSys.Emprunt.domain;
 
 
 import INAF.LybraSys.Exemplaire.domain.ExemplaireModel;
+import INAF.LybraSys.Student.Domain.StudentModel;
 import INAF.LybraSys.User.Domain.UsersModel;
 import jakarta.persistence.*;
 import lombok.*;
@@ -36,6 +37,10 @@ public class EmpruntModel {
     private Date dateRetourEffectif;
 
     private String statut;
+
+    @ManyToOne
+    @JoinColumn(name = "student_id")  // clé étrangère en DB
+    private StudentModel student;
 
 
 }

@@ -2,9 +2,7 @@ package INAF.LybraSys.User.Application.Service;
 
 import INAF.LybraSys.User.Api.Dto.UsersRequestDto;
 import INAF.LybraSys.User.Api.Dto.UsersResponseDto;
-import jakarta.transaction.Transactional;
-import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Service;
+
 
 import java.util.List;
 

@@ -95,7 +95,7 @@ public class EmpruntServiceImpl implements EmpruntService {
     private EmpruntResponseDto toDto(EmpruntModel emprunt) {
         return new EmpruntResponseDto(
                 emprunt.getIdEmprunt(),
-                emprunt.getUser().getName(),
+                emprunt.getUser().getUsername(),
                 emprunt.getExemplaire().getCodeExemplaire(),
                 emprunt.getDateEmprunt(),
                 emprunt.getDateRetourPrevu(),
